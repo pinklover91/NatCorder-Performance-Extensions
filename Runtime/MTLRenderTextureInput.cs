@@ -11,7 +11,7 @@ namespace NatSuite.Recorders.Inputs {
     /// <summary>
     /// Recorder input for recording video frames from RenderTexture's with hardware acceleration on iOS Metal.
     /// </summary>
-    public class MTLRenderTextureInput : RenderTextureInput { // DEPLOY
+    public class MTLRenderTextureInput : RenderTextureInput {
 
         #region --Client API--
         /// <summary>
@@ -30,7 +30,7 @@ namespace NatSuite.Recorders.Inputs {
         /// </summary>
         /// <param name="renderTexture">Source RenderTexture.</param>
         /// <param name="timestamp">Frame timestamp in nanoseconds.</param>
-        public override void CommitFrame (RenderTexture renderTexture, long timestamp) => readback.Request<byte>(renderTexture, buffer => CommitFrame(buffer, timestamp));
+        public override void CommitFrame (RenderTexture renderTexture, long timestamp) => readback.Request(renderTexture, buffer => CommitFrame(buffer, timestamp));
 
         /// <summary>
         /// Stop recorder input and release resources.
