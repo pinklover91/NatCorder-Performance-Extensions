@@ -26,7 +26,7 @@ var cameraInput = new CameraInput(recorder, clock, cameras);
 cameraInput.frameInput = new GLESRenderTextureInput(recorder, multithreading: true);
 ```
 
-NCPX provides `GLESRenderTextureInput` for OpenGLES 3 on Android and `MLTRenderTextureInput` for Metal on iOS.
+NCPX provides `GLESRenderTextureInput` for OpenGLES 3 on Android and `MTLRenderTextureInput` for Metal on iOS.
 
 ## Watermark Recording
 *INCOMPLETE*
