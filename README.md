@@ -13,7 +13,7 @@ To install the library, add the following to your project's `manifest.json` file
 ```
 
 ## High Performance Recording
-NCPX provides highly optimized recorder inputs that offer inexpensive [pixel buffer readbacks](https://docs.natsuite.io/natcorder/workflows/recording-rendertextures) from `RenderTexture`s, and offer [multithreaded recording](https://docs.natsuite.io/natcorder/workflows/performance-considerations#multithreaded-recording).
+NCPX provides highly optimized recorder inputs that offer inexpensive [pixel buffer readbacks](https://docs.natsuite.io/natcorder/workflows/recording-rendertextures) from `Texture` objects, and simultaneously offer [multithreaded recording](https://docs.natsuite.io/natcorder/workflows/performance-considerations#multithreaded-recording).
 
 They can be used independently, or attached to a `CameraInput` when recording game cameras:
 ```csharp
@@ -22,11 +22,11 @@ var recorder = ...;
 var clock = ...;
 // Create a camera input
 var cameraInput = new CameraInput(recorder, clock, cameras);
-// Attach optimized frame input from NCPX to the camera input
-cameraInput.frameInput = new GLESRenderTextureInput(recorder, multithreading: true);
+// Attach optimized texture input from NCPX to the camera input
+cameraInput.textureInput = new GLESTextureInput(recorder, multithreading: true);
 ```
 
-NCPX provides `GLESRenderTextureInput` for OpenGLES 3 on Android and `MTLRenderTextureInput` for Metal on iOS.
+NCPX provides `GLESTextureInput` for OpenGLES 3 on Android and `MTLTextureInput` for Metal on iOS.
 
 ## Watermark Recording
 *INCOMPLETE*
